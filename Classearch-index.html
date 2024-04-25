@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Search Engine</title>
+    <style>
+        /* CSS styles for the search engine interface */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="searchQuery" placeholder="Enter your search query...">
+    <button onclick="search()">Search</button>
+
+    <script>
+        // JavaScript function to perform the search
+        function search() {
+            let query = document.getElementById('searchQuery').value;
+            let proxyUrl = 'https://your-proxy-url.com/search?q=';
+            let searchUrl = proxyUrl + encodeURIComponent(query);
+            window.location.href = searchUrl;
+        }
+    </script>
+</body>
+</html>
